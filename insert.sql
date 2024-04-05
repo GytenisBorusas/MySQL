@@ -40,11 +40,56 @@
 --     age INT NOT NULL
 -- );
     
+    
+
  
+-- CREATE TABLE cats3
+-- (
+-- 	name VARCHAR(100) DEFAULT 'unnamed',
+--     age INT DEFAULT 99
+-- )
+
+
+-- CREATE TABLE unique_cats
+-- (
+-- 	cat_ID INT NOT NULL PRIMARY KEY,
+-- 	name VARCHAR(100),
+-- 	age INT
+-- );
+--     
+
+-- SELECT * FROM unique_cats;
+--     
+
+
+    
+    
+--     CREATE TABLE unique_cats3
+--     (
+-- 		cat_id INT AUTO_INCREMENT,
+--         name VARCHAR(100),
+--         age INT,
+--         PRIMARY KEY (cat_ID)
+-- 	);
+    
+    
+-- INSERT INTO unique_cats3(name, age)
+-- VALUES ('catname2', 1);
+
+-- SELECT * FROM unique_cats3; 
     
     
     
     
+-- CREATE TABLE employees (
+-- 		id INT AUTO_INCREMENT NOT NULL,
+--         last_name VARCHAR(100) NOT NULL,
+--         first_name VARCHAR(100) NOT NULL,
+--         middle_name VARCHAR(100),
+--         age INT NOT NULL,
+--         current_status VARCHAR(100) NOT NULL DEFAULT 'employed',
+--         PRIMARY KEY (id)
+-- 	);
     
     
     
