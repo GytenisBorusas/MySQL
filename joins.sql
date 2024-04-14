@@ -1,12 +1,12 @@
 -- CREATE DATABASE shop;
 -- USE shop;
 
--- CREATE TABLE customers (
--- 	id INT PRIMARY KEY AUTO_INCREMENT,
---     first_name VARCHAR(50),
---     last_name VARCHAR(50),
---     email VARCHAR(50)
--- );
+CREATE TABLE customers (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    email VARCHAR(50)
+);
 
 -- CREATE TABLE orders (
 -- 	id INT PRIMARY KEY AUTO_INCREMENT,
