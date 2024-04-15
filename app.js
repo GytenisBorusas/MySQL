@@ -35,55 +35,56 @@ var connection = mysql.createConnection({
     database: 'join_us'
   });
 
-  connection.connect(err => {
-    if (err) {
-      console.error('Error connecting: ' + err.stack);
-      return;
-    }
-    console.log('Connected as id ' + connection.threadId);
-  
-
-
-
 
     // query
-    connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
-        if (error) throw error;
-        console.log('The solution is: ', results[0].solution);
-
-     var q = 'SELECT CURTIME() as time, CURDATE() as date, NOW() as now';
-    connection.query(q, function (error, results, fields) {
-        if (error) throw error;
-        console.log(results[0].time);
-        console.log(results[0].date);
-        console.log(results[0].now);
-        });
-
-
-        
-  
-      console.log(results);
-      // Close the connection
-      connection.end(err => {
-        if (err) {
-          return console.log('error:' + err.message);
-        }
-        console.log('Closed the database connection.');
-      });
-    });
-  });
+    // connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
+    //     if (error) throw error;
+    //     console.log('The solution is: ', results[0].solution);
+    // });
 
 
 
+    // SELECTING DATA
+    // var q = 'SELECT COUNT(*) AS total FROM users';
+
+    // connection.query(q, function (error, results, fields) {
+    //     if (error) throw error;
+    //     console.log(results[0].total);
+    //     });
 
 
+  //   // INSERTING DATA
+  // var person = {
+  //     email: faker.internet.email(),
+  //     created_at: faker.date.past()
+  // };
+   
+  // var end_result = connection.query('INSERT INTO users SET ?', person, function(err, result) {
+  //   if (err) throw err;
+  //   console.log(result);
+  // });
 
 
+// INSERT 500 RANDOM USERS
+var data = [];
+for(var i = 0; i < 500; i++){
+    data.push([
+        faker.internet.email(),
+        faker.date.past()
+    ]);
+}
+ 
+var q = 'INSERT INTO users (email, created_at) VALUES ?';
+ 
+connection.query(q, [data], function(err, result) {
+  console.log(err);
+  console.log(result);
+});
 
 
+connection.end();
 
 
-//  SELECT CURTIME() as time, CURDATE() as date, NOW() as now;
 
 
 
